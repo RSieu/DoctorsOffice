@@ -31,7 +31,7 @@ namespace DoctorsOffice2
             visitCost = decimal.Parse(txtVisitCost.Text);
 
             // 3. Interim math stored in variables
-            copayRate = 0.250m;
+            copayRate = 0.25m;
             patientCopayAmount = visitCost * copayRate;
             insurancePaidAmount = visitCost - patientCopayAmount;
 
