@@ -15,34 +15,28 @@ namespace DoctorsOffice2
         {
             // Calculation logic will go here
 
-            // 1. Declare all variables upfront
+            // 1. Now, reading inputs from the form.
             //- block start
             //patientName in string 
-            string patientName;
-            string insurancePlan;
-            decimal visitCost;
-            decimal copayRate;
-            decimal patientCopayAmount;
-            decimal insurancePaidAmount;
-            //
-            // 2. Read inputs into variables
-            patientName = txtPatientName.Text;
-            insurancePlan = txtInsurancePlan.Text;
-            visitCost = decimal.Parse(txtVisitCost.Text);
+            string currentPatientName = txtPatientName.Text;
+            string currentInsurancePlan = txtInsurancePlan.Text;
+            decimal currentVisitCost = decimal.Parse(txtVisitCost.Text);
+            decimal currentCopayRate = 0.25m;
+            // create object?
+            DoctorOffice currentVisit = new DoctorOffice(currentPatientName, currentVisitCost, currentCopayRate);
 
-            // 3. Interim math stored in variables
-            copayRate = 0.25m;
-            patientCopayAmount = visitCost * copayRate;
-            insurancePaidAmount = visitCost - patientCopayAmount;
-
+            //math using the Objects properties instead of loose variables
+            decimal patientCopayAmount = currentVisit.CostOfOfficeVisit * currentVisit.PercentInsuranceCoverage;
+            decimal insurancePaidAmount = currentVisit.CostOfOfficeVisit - patientCopayAmount;
+            
             // 4. Output lines to the ListBox
             lstOutput.Items.Clear();
-            lstOutput.Items.Add("Patient Name:\t\t" + patientName);
-            lstOutput.Items.Add("Insurance Plan:\t\t" + insurancePlan);
-            lstOutput.Items.Add("Visit Cost:\t\t" + visitCost.ToString("c"));
-            lstOutput.Items.Add("Copay Rate:\t\t" + copayRate.ToString("p0"));
+            lstOutput.Items.Add("Patient Name:\t\t" + currentVisit.PatientName);
+            lstOutput.Items.Add("Insurance Plan:\t\t" + currentInsurancePlan);
+            lstOutput.Items.Add("Visit Cost:\t\t" + currentVisit.CostOfOfficeVisit.ToString("c"));
+            lstOutput.Items.Add("Copay Rate:\t\t" + currentVisit.PercentInsuranceCoverage.ToString("p0"));
+            lstOutput.Items.Add("Insurance Portion:\t\t" + insurancePaidAmount.ToString("c"));
             lstOutput.Items.Add("Patient Copay:\t\t" + patientCopayAmount.ToString("c"));
-            lstOutput.Items.Add("Insurance Portion:\t" + insurancePaidAmount.ToString("c"));
             //block end
         }
 

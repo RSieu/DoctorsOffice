@@ -68,7 +68,7 @@
             lblVisitCost.Location = new Point(31, 181);
             lblVisitCost.Name = "lblVisitCost";
             lblVisitCost.Size = new Size(131, 25);
-            lblVisitCost.TabIndex = 2;
+            lblVisitCost.TabIndex = 3;
             lblVisitCost.Text = "Visit Cost ($):";
             // 
             // txtVisitCost
@@ -77,7 +77,7 @@
             txtVisitCost.Margin = new Padding(3, 4, 3, 4);
             txtVisitCost.Name = "txtVisitCost";
             txtVisitCost.Size = new Size(271, 31);
-            txtVisitCost.TabIndex = 5;
+            txtVisitCost.TabIndex = 4;
             // 
             // txtPatientName
             // 
@@ -85,7 +85,7 @@
             txtPatientName.Margin = new Padding(3, 4, 3, 4);
             txtPatientName.Name = "txtPatientName";
             txtPatientName.Size = new Size(271, 31);
-            txtPatientName.TabIndex = 6;
+            txtPatientName.TabIndex = 2;
             txtPatientName.Enter += txtPatientName_Enter;
             txtPatientName.Leave += txtPatientName_Leave;
             // 
@@ -134,10 +134,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(38, 259);
+            label1.Font = new Font("Segoe UI", 12F);
+            label1.Location = new Point(32, 259);
             label1.Name = "label1";
-            label1.Size = new Size(129, 25);
-            label1.TabIndex = 11;
+            label1.Size = new Size(173, 32);
+            label1.TabIndex = 5;
             label1.Text = "Insurance Plan:";
             label1.Click += label1_Click;
             // 
@@ -146,7 +147,7 @@
             txtInsurancePlan.Location = new Point(313, 259);
             txtInsurancePlan.Name = "txtInsurancePlan";
             txtInsurancePlan.Size = new Size(267, 31);
-            txtInsurancePlan.TabIndex = 12;
+            txtInsurancePlan.TabIndex = 6;
             // 
             // Form1
             // 
