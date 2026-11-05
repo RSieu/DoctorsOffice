@@ -29,7 +29,7 @@ namespace DoctorsOffice2
             decimal patientCopayAmount = currentVisit.CostOfOfficeVisit * currentVisit.PercentInsuranceCoverage;
             decimal insurancePaidAmount = currentVisit.CostOfOfficeVisit - patientCopayAmount;
             
-            // 4. Output lines to the ListBox
+            }
             lstOutput.Items.Clear();
             lstOutput.Items.Add("Patient Name:\t\t" + currentVisit.PatientName);
             //lstOutput.Items.Add("Insurance Plan:\t\t" + currentInsurancePlan);
