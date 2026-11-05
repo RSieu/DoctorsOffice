@@ -32,7 +32,7 @@ namespace DoctorsOffice2
             // 4. Output lines to the ListBox
             lstOutput.Items.Clear();
             lstOutput.Items.Add("Patient Name:\t\t" + currentVisit.PatientName);
-            lstOutput.Items.Add("Insurance Plan:\t\t" + currentInsurancePlan);
+            //lstOutput.Items.Add("Insurance Plan:\t\t" + currentInsurancePlan);
             lstOutput.Items.Add("Visit Cost:\t\t" + currentVisit.CostOfOfficeVisit.ToString("c"));
             lstOutput.Items.Add("Copay Rate:\t\t" + currentVisit.PercentInsuranceCoverage.ToString("p0"));
             lstOutput.Items.Add("Insurance Portion:\t\t" + insurancePaidAmount.ToString("c"));
