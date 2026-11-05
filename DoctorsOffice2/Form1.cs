@@ -19,7 +19,7 @@ namespace DoctorsOffice2
             //- block start
             //patientName in string 
             string currentPatientName = txtPatientName.Text;
-            string currentInsurancePlan = txtInsurancePlan.Text;
+            //string currentInsurancePlan = txtInsurancePlan.Text;
             decimal currentVisitCost = decimal.Parse(txtVisitCost.Text);
             decimal currentCopayRate = 0.25m;
             // create object?
@@ -32,7 +32,7 @@ namespace DoctorsOffice2
             // 4. Output lines to the ListBox
             lstOutput.Items.Clear();
             lstOutput.Items.Add("Patient Name:\t\t" + currentVisit.PatientName);
-            lstOutput.Items.Add("Insurance Plan:\t\t" + currentInsurancePlan);
+            //lstOutput.Items.Add("Insurance Plan:\t\t" + currentInsurancePlan);
             lstOutput.Items.Add("Visit Cost:\t\t" + currentVisit.CostOfOfficeVisit.ToString("c"));
             lstOutput.Items.Add("Copay Rate:\t\t" + currentVisit.PercentInsuranceCoverage.ToString("p0"));
             lstOutput.Items.Add("Insurance Portion:\t\t" + insurancePaidAmount.ToString("c"));
@@ -43,7 +43,7 @@ namespace DoctorsOffice2
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtPatientName.Clear();
-            txtInsurancePlan.Clear();
+            //txtInsurancePlan.Clear();
             txtVisitCost.Clear();
             lstOutput.Items.Clear();
             txtPatientName.Focus();

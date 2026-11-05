@@ -1,4 +1,17 @@
 ﻿namespace DoctorsOffice2
+//namesapce is a container for classes and other types. It helps organize code and prevent naming conflicts. In this case, DoctorsOffice2 is the namespace that contains the Form1 class.
+//like a specific labelled drawer in a tool box where you can store and organize your tools (classes, methods, etc.) related to the DoctorsOffice2 application.
+// class is a specific kind of tool like a hammer. You add methods define the behavior or actions like swinging the hammer? 
+// public class Hammer <- can be accessed from anywhere in the program or even from other programs that reference this code. It is a blueprint for creating objects (instances) of the Hammer class.
+// {
+// public string material <- property of the hammera varoable that has the description of the hammer's material
+// {
+// get; set; <- let your program get and read program data and set and write program data
+// }
+// public void Swing (int Strength) <- public means method can be called from anywhere, and void means that the method can be called or triggered without changing its. parenthis hold any extra information that the method might need to perform its action. In this case, the Swing method doesn't require any additional information to swing the hammer.
+// {
+// Console.Writeline ($swinging the hammer with strength 'Strength')
+// }
 {
     partial class Form1
     {
@@ -37,8 +50,6 @@
             btnClear = new Button();
             btnExit = new Button();
             lstOutput = new ListBox();
-            label1 = new Label();
-            txtInsurancePlan = new TextBox();
             SuspendLayout();
             // 
             // lblTitle
@@ -91,7 +102,7 @@
             // 
             // btnCalculate
             // 
-            btnCalculate.Location = new Point(72, 365);
+            btnCalculate.Location = new Point(53, 305);
             btnCalculate.Margin = new Padding(3, 4, 3, 4);
             btnCalculate.Name = "btnCalculate";
             btnCalculate.Size = new Size(109, 59);
@@ -102,7 +113,7 @@
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(263, 365);
+            btnClear.Location = new Point(257, 305);
             btnClear.Margin = new Padding(3, 4, 3, 4);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(116, 59);
@@ -113,7 +124,7 @@
             // 
             // btnExit
             // 
-            btnExit.Location = new Point(448, 365);
+            btnExit.Location = new Point(448, 305);
             btnExit.Margin = new Padding(3, 4, 3, 4);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(133, 59);
@@ -131,31 +142,11 @@
             lstOutput.Size = new Size(542, 254);
             lstOutput.TabIndex = 10;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F);
-            label1.Location = new Point(32, 259);
-            label1.Name = "label1";
-            label1.Size = new Size(173, 32);
-            label1.TabIndex = 5;
-            label1.Text = "Insurance Plan:";
-            label1.Click += label1_Click;
-            // 
-            // txtInsurancePlan
-            // 
-            txtInsurancePlan.Location = new Point(313, 259);
-            txtInsurancePlan.Name = "txtInsurancePlan";
-            txtInsurancePlan.Size = new Size(267, 31);
-            txtInsurancePlan.TabIndex = 6;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1231, 812);
-            Controls.Add(txtInsurancePlan);
-            Controls.Add(label1);
             Controls.Add(lstOutput);
             Controls.Add(btnExit);
             Controls.Add(btnClear);
@@ -185,8 +176,6 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.ListBox lstOutput;
-        private Label label1;
-        private TextBox txtInsurancePlan;
     }
 }
 
