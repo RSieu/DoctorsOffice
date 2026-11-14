@@ -1,4 +1,4 @@
-namespace DoctorsOffice2
+namespace DoctorsOffice
 {
     internal static class Program
     {
