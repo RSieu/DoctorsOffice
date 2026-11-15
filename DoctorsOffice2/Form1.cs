@@ -21,39 +21,46 @@ namespace DoctorsOffice
             // 1. Read inputs from the form (The receptionist collecting raw data)
 
             string inputName = txtPatientName.Text;
-            decimal inputCost = decimal.Parse(txtVisitCost.Text);
+
+            //stage 3
+
+            bool isCostValid = decimal.TryParse(txtVisitCost.Text, out decimal inputCost);
             //decimal tempCopayRate = 0.25m; // killed for stage 3
 
             // 2. Print a fresh clipboard and write the inputs onto it
-
-            DoctorOffice patientClipboard = new DoctorOffice();
-
-            patientClipboard.PatientName = inputName;
-            patientClipboard.CostOfOfficeVisit = inputCost;
-            patientClipboard.InsurancePlan = selectedPlan;
-
-            // 3. Tell the clipboard to do its own math
-            patientClipboard.CalculateCosts();
-
-            // 4. Get the receipt and put it in the ListBox
-            lstOutput.Items.Clear();
-
-            string[] receiptLines = patientClipboard.ToString().Split('\n');
-            //Look at this giant receipt, and every time you see the newline character (\n), cut the paper right there."
-            ////nd do whatever is inside the curly brackets."In C#, a "stack" or list of items is called an Array,
-            //which is why we save it as string[] (the brackets mean "an array of strings"). We named this stack receiptLines
-
-            foreach (string line in receiptLines)
-            //For each individual piece of paper in my receiptLines. For each individual piece of paper in my receiptLines
+            if (isCostValid)
             {
-                lstOutput.Items.Add(line);
+                // 2. Print a fresh clipboard and write the inputs onto it
+                DoctorOffice patientClipboard = new DoctorOffice();
+
+                patientClipboard.PatientName = inputName;
+                patientClipboard.CostOfOfficeVisit = inputCost;
+                patientClipboard.InsurancePlan = selectedPlan;
+
+                //tell the clipboard to do its own mathq
+                patientClipboard.CalculateCosts();
+
+                // 4. Get the receipt and put it in the ListBox
+                lstOutput.Items.Clear();
+                string[] receiptLines = patientClipboard.ToString().Split('\n');
+
+                foreach (string line in receiptLines)
+                {
+                    lstOutput.Items.Add(line);
+                }
             }
+            else
+            {
+                //error message coded in the else portion and displayed in list box.
+                lstOutput.Items.Clear();
+                lstOutput.Items.Add("Please enter a valid cost for the office visit.");
+            }
+        
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtPatientName.Clear();
-            //txtInsurancePlan.Clear();
+    txtPatientName.Clear();
             txtVisitCost.Clear();
             lstOutput.Items.Clear();
             radHMO.Checked = true;
@@ -61,9 +68,15 @@ namespace DoctorsOffice
         }
 
         private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+{
+    //Stage 3: Message box for quitting
+    DialogResult response = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+    if (response == DialogResult.Yes)
+    {
+        this.Close();
+    }
+}
 
         private void label1_Click(object sender, EventArgs e)
         {
