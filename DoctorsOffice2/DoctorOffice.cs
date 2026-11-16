@@ -12,8 +12,6 @@ namespace DoctorsOffice
         public decimal PercentInsuranceCoverage { get; set; }
         public decimal PatientCopayAmount { get; set; }
         public decimal InsurancePaidAmount { get; set; }
-
-        //hold whichever plan the user click on the form, and then use that to calculate the copay amount.
         public string InsurancePlan { get; set; }
 
         //Named Constants (Official Unchangeable Names for the insureance plans and their copay rates).
@@ -60,6 +58,7 @@ namespace DoctorsOffice
             CostOfOfficeVisit = costOfVisit;
             PercentInsuranceCoverage = percentCoverage;
             InsurancePlan = PLAN_HMO;
+            //call calculate cost
         }
         public void CalculateCosts()
         {

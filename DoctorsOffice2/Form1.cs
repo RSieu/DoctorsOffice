@@ -31,6 +31,7 @@ namespace DoctorsOffice
             if (isCostValid)
             {
                 // 2. Print a fresh clipboard and write the inputs onto it
+                //use parametized version
                 DoctorOffice patientClipboard = new DoctorOffice();
 
                 patientClipboard.PatientName = inputName;
@@ -41,7 +42,7 @@ namespace DoctorsOffice
                 patientClipboard.CalculateCosts();
 
                 // 4. Get the receipt and put it in the ListBox
-                lstOutput.Items.Clear();
+                // lstOutput.Items.Clear();
                 string[] receiptLines = patientClipboard.ToString().Split('\n');
 
                 foreach (string line in receiptLines)
@@ -109,7 +110,11 @@ namespace DoctorsOffice
         }
         private void radNone_CheckedChanged(object sender, EventArgs e)
         {
-            if (radNone.Checked) selectedPlan = DoctorOffice.PLAN_NONE; 
+            if (radNone.Checked)
+            {
+                selectedPlan = DoctorOffice.PLAN_NONE;
+            }
+            //when using if statements need brackets.
         }
     }
 }
