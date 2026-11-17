@@ -51,14 +51,15 @@ namespace DoctorsOffice
             InsurancePlan = PLAN_HMO;
         }
         
-        //Parameterized Constructor
-        public DoctorOffice(string patientName,decimal costOfVisit, decimal percentCoverage)
+        //Parameterized Constructor // nice
+        public DoctorOffice(string patientName,decimal costOfVisit, string plan)
         {
             PatientName = patientName;
             CostOfOfficeVisit = costOfVisit;
-            PercentInsuranceCoverage = percentCoverage;
-            InsurancePlan = PLAN_HMO;
-            //call calculate cost
+            InsurancePlan = plan;
+            
+            //this will trigger SetCoverageRate() to set the correct percentage based on the plan selected.
+            CalculateCosts();
         }
         public void CalculateCosts()
         {

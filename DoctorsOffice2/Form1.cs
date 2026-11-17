@@ -32,14 +32,8 @@ namespace DoctorsOffice
             {
                 // 2. Print a fresh clipboard and write the inputs onto it
                 //use parametized version
-                DoctorOffice patientClipboard = new DoctorOffice();
+                DoctorOffice patientClipboard = new DoctorOffice(inputName, inputCost, selectedPlan);
 
-                patientClipboard.PatientName = inputName;
-                patientClipboard.CostOfOfficeVisit = inputCost;
-                patientClipboard.InsurancePlan = selectedPlan;
-
-                //tell the clipboard to do its own mathq
-                patientClipboard.CalculateCosts();
 
                 // 4. Get the receipt and put it in the ListBox
                 // lstOutput.Items.Clear();
@@ -53,7 +47,7 @@ namespace DoctorsOffice
             else
             {
                 //error message coded in the else portion and displayed in list box.
-                lstOutput.Items.Clear();
+               // lstOutput.Items.Clear();
                 lstOutput.Items.Add("Please enter a valid cost for the office visit.");
             }
         
