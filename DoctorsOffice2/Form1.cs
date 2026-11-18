@@ -124,6 +124,11 @@ namespace DoctorsOffice
         {
             radNone.Checked = true;
         }
+
+        private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+        }
     }
 }
 //a namespace is a container that holds classes, variables, and properties

@@ -54,6 +54,7 @@
             radNone = new RadioButton();
             radPPO = new RadioButton();
             radHMO = new RadioButton();
+            openFileDialog1 = new OpenFileDialog();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -61,10 +62,10 @@
             // 
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitle.Location = new Point(11, 13);
+            lblTitle.Location = new Point(10, 10);
             lblTitle.Margin = new Padding(2, 0, 2, 0);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(327, 25);
+            lblTitle.Size = new Size(270, 20);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "Doctor's Office Copay Calculator";
             // 
@@ -72,10 +73,10 @@
             // 
             lblPatientName.AutoSize = true;
             lblPatientName.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPatientName.Location = new Point(25, 91);
+            lblPatientName.Location = new Point(22, 68);
             lblPatientName.Margin = new Padding(2, 0, 2, 0);
             lblPatientName.Name = "lblPatientName";
-            lblPatientName.Size = new Size(115, 20);
+            lblPatientName.Size = new Size(97, 17);
             lblPatientName.TabIndex = 1;
             lblPatientName.Text = "Patient Name:";
             // 
@@ -83,37 +84,37 @@
             // 
             lblVisitCost.AutoSize = true;
             lblVisitCost.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblVisitCost.Location = new Point(25, 145);
+            lblVisitCost.Location = new Point(22, 109);
             lblVisitCost.Margin = new Padding(2, 0, 2, 0);
             lblVisitCost.Name = "lblVisitCost";
-            lblVisitCost.Size = new Size(113, 20);
+            lblVisitCost.Size = new Size(92, 17);
             lblVisitCost.TabIndex = 3;
             lblVisitCost.Text = "Visit Cost ($):";
             // 
             // txtVisitCost
             // 
-            txtVisitCost.Location = new Point(248, 144);
-            txtVisitCost.Margin = new Padding(2, 3, 2, 3);
+            txtVisitCost.Location = new Point(217, 108);
+            txtVisitCost.Margin = new Padding(2, 2, 2, 2);
             txtVisitCost.Name = "txtVisitCost";
-            txtVisitCost.Size = new Size(218, 27);
+            txtVisitCost.Size = new Size(191, 23);
             txtVisitCost.TabIndex = 4;
             // 
             // txtPatientName
             // 
-            txtPatientName.Location = new Point(248, 91);
-            txtPatientName.Margin = new Padding(2, 3, 2, 3);
+            txtPatientName.Location = new Point(217, 68);
+            txtPatientName.Margin = new Padding(2, 2, 2, 2);
             txtPatientName.Name = "txtPatientName";
-            txtPatientName.Size = new Size(218, 27);
+            txtPatientName.Size = new Size(191, 23);
             txtPatientName.TabIndex = 2;
             txtPatientName.Enter += txtPatientName_Enter;
             txtPatientName.Leave += txtPatientName_Leave;
             // 
             // btnCalculate
             // 
-            btnCalculate.Location = new Point(42, 244);
-            btnCalculate.Margin = new Padding(2, 3, 2, 3);
+            btnCalculate.Location = new Point(37, 183);
+            btnCalculate.Margin = new Padding(2, 2, 2, 2);
             btnCalculate.Name = "btnCalculate";
-            btnCalculate.Size = new Size(87, 47);
+            btnCalculate.Size = new Size(76, 35);
             btnCalculate.TabIndex = 7;
             btnCalculate.Text = "&Calculate";
             btnCalculate.UseVisualStyleBackColor = true;
@@ -121,10 +122,10 @@
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(206, 244);
-            btnClear.Margin = new Padding(2, 3, 2, 3);
+            btnClear.Location = new Point(180, 183);
+            btnClear.Margin = new Padding(2, 2, 2, 2);
             btnClear.Name = "btnClear";
-            btnClear.Size = new Size(93, 47);
+            btnClear.Size = new Size(81, 35);
             btnClear.TabIndex = 8;
             btnClear.Text = "C&lear";
             btnClear.UseVisualStyleBackColor = true;
@@ -132,10 +133,10 @@
             // 
             // btnExit
             // 
-            btnExit.Location = new Point(358, 244);
-            btnExit.Margin = new Padding(2, 3, 2, 3);
+            btnExit.Location = new Point(313, 183);
+            btnExit.Margin = new Padding(2, 2, 2, 2);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(106, 47);
+            btnExit.Size = new Size(93, 35);
             btnExit.TabIndex = 9;
             btnExit.Text = "E&xit";
             btnExit.UseVisualStyleBackColor = true;
@@ -144,10 +145,10 @@
             // lstOutput
             // 
             lstOutput.FormattingEnabled = true;
-            lstOutput.Location = new Point(30, 404);
-            lstOutput.Margin = new Padding(2, 3, 2, 3);
+            lstOutput.Location = new Point(26, 303);
+            lstOutput.Margin = new Padding(2, 2, 2, 2);
             lstOutput.Name = "lstOutput";
-            lstOutput.Size = new Size(434, 204);
+            lstOutput.Size = new Size(380, 154);
             lstOutput.TabIndex = 0;
             lstOutput.TabStop = false;
             // 
@@ -156,9 +157,11 @@
             groupBox1.Controls.Add(radNone);
             groupBox1.Controls.Add(radPPO);
             groupBox1.Controls.Add(radHMO);
-            groupBox1.Location = new Point(598, 91);
+            groupBox1.Location = new Point(523, 68);
+            groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(208, 121);
+            groupBox1.Padding = new Padding(3, 2, 3, 2);
+            groupBox1.Size = new Size(182, 91);
             groupBox1.TabIndex = 11;
             groupBox1.TabStop = false;
             groupBox1.Text = "Insurance Type";
@@ -167,9 +170,10 @@
             // radNone
             // 
             radNone.AutoSize = true;
-            radNone.Location = new Point(27, 95);
+            radNone.Location = new Point(24, 71);
+            radNone.Margin = new Padding(3, 2, 3, 2);
             radNone.Name = "radNone";
-            radNone.Size = new Size(66, 24);
+            radNone.Size = new Size(54, 19);
             radNone.TabIndex = 2;
             radNone.Text = "None";
             radNone.UseVisualStyleBackColor = true;
@@ -178,9 +182,10 @@
             // radPPO
             // 
             radPPO.AutoSize = true;
-            radPPO.Location = new Point(27, 65);
+            radPPO.Location = new Point(24, 49);
+            radPPO.Margin = new Padding(3, 2, 3, 2);
             radPPO.Name = "radPPO";
-            radPPO.Size = new Size(57, 24);
+            radPPO.Size = new Size(48, 19);
             radPPO.TabIndex = 1;
             radPPO.Text = "PPO";
             radPPO.UseVisualStyleBackColor = true;
@@ -189,19 +194,25 @@
             // radHMO
             // 
             radHMO.AutoSize = true;
-            radHMO.Location = new Point(27, 35);
+            radHMO.Location = new Point(24, 26);
+            radHMO.Margin = new Padding(3, 2, 3, 2);
             radHMO.Name = "radHMO";
-            radHMO.Size = new Size(65, 24);
+            radHMO.Size = new Size(54, 19);
             radHMO.TabIndex = 0;
             radHMO.Text = "HMO";
             radHMO.UseVisualStyleBackColor = true;
             radHMO.CheckedChanged += radHMO_CheckedChanged;
             // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
+            openFileDialog1.FileOk += openFileDialog1_FileOk;
+            // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(985, 650);
+            ClientSize = new Size(862, 488);
             Controls.Add(groupBox1);
             Controls.Add(lstOutput);
             Controls.Add(btnExit);
@@ -212,7 +223,7 @@
             Controls.Add(lblVisitCost);
             Controls.Add(lblPatientName);
             Controls.Add(lblTitle);
-            Margin = new Padding(2, 3, 2, 3);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Load += Form1_Load;
@@ -238,6 +249,7 @@
         private RadioButton radNone;
         private RadioButton radPPO;
         private RadioButton radHMO;
+        private OpenFileDialog openFileDialog1;
     }
 }
 
