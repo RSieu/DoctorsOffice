@@ -51,9 +51,9 @@
             btnExit = new Button();
             lstOutput = new ListBox();
             groupBox1 = new GroupBox();
-            radHMO = new RadioButton();
-            radPPO = new RadioButton();
             radNone = new RadioButton();
+            radPPO = new RadioButton();
+            radHMO = new RadioButton();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -148,7 +148,8 @@
             lstOutput.Margin = new Padding(2, 3, 2, 3);
             lstOutput.Name = "lstOutput";
             lstOutput.Size = new Size(434, 204);
-            lstOutput.TabIndex = 10;
+            lstOutput.TabIndex = 0;
+            lstOutput.TabStop = false;
             // 
             // groupBox1
             // 
@@ -163,17 +164,16 @@
             groupBox1.Text = "Insurance Type";
             groupBox1.Enter += groupBox1_Enter;
             // 
-            // radHMO
+            // radNone
             // 
-            radHMO.AutoSize = true;
-            radHMO.Location = new Point(27, 35);
-            radHMO.Name = "radHMO";
-            radHMO.Size = new Size(65, 24);
-            radHMO.TabIndex = 0;
-            radHMO.TabStop = true;
-            radHMO.Text = "HMO";
-            radHMO.UseVisualStyleBackColor = true;
-            radHMO.CheckedChanged += radHMO_CheckedChanged;
+            radNone.AutoSize = true;
+            radNone.Location = new Point(27, 95);
+            radNone.Name = "radNone";
+            radNone.Size = new Size(66, 24);
+            radNone.TabIndex = 2;
+            radNone.Text = "None";
+            radNone.UseVisualStyleBackColor = true;
+            radNone.CheckedChanged += radNone_CheckedChanged;
             // 
             // radPPO
             // 
@@ -182,22 +182,20 @@
             radPPO.Name = "radPPO";
             radPPO.Size = new Size(57, 24);
             radPPO.TabIndex = 1;
-            radPPO.TabStop = true;
             radPPO.Text = "PPO";
             radPPO.UseVisualStyleBackColor = true;
             radPPO.CheckedChanged += radPPO_CheckedChanged;
             // 
-            // radNone
+            // radHMO
             // 
-            radNone.AutoSize = true;
-            radNone.Location = new Point(27, 95);
-            radNone.Name = "radNone";
-            radNone.Size = new Size(66, 24);
-            radNone.TabIndex = 2;
-            radNone.TabStop = true;
-            radNone.Text = "None";
-            radNone.UseVisualStyleBackColor = true;
-            radNone.CheckedChanged += radNone_CheckedChanged;
+            radHMO.AutoSize = true;
+            radHMO.Location = new Point(27, 35);
+            radHMO.Name = "radHMO";
+            radHMO.Size = new Size(65, 24);
+            radHMO.TabIndex = 0;
+            radHMO.Text = "HMO";
+            radHMO.UseVisualStyleBackColor = true;
+            radHMO.CheckedChanged += radHMO_CheckedChanged;
             // 
             // Form1
             // 
@@ -217,7 +215,7 @@
             Margin = new Padding(2, 3, 2, 3);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Doctor's Office Billing";
+            Load += Form1_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);

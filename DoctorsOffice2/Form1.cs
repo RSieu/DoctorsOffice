@@ -6,14 +6,11 @@ namespace DoctorsOffice
 {
     public partial class Form1 : Form
     {
-    string selectedPlan = DoctorOffice.PLAN_HMO;
+        string selectedPlan = DoctorOffice.PLAN_HMO;
         public Form1()
+
         {
             InitializeComponent();
-        }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            radHMO.Checked = true;
         }
 
         private void btnCalculate_Click(object sender, EventArgs e)
@@ -47,35 +44,30 @@ namespace DoctorsOffice
             else
             {
                 //error message coded in the else portion and displayed in list box.
-               // lstOutput.Items.Clear();
+                // lstOutput.Items.Clear();
                 lstOutput.Items.Add("Please enter a valid cost for the office visit.");
             }
-        
+
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-    txtPatientName.Clear();
+            txtPatientName.Clear();
             txtVisitCost.Clear();
             lstOutput.Items.Clear();
-            radHMO.Checked = true;
+            radNone.Checked = true;
             txtPatientName.Focus();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
-{
-    //Stage 3: Message box for quitting
-    DialogResult response = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-    if (response == DialogResult.Yes)
-    {
-        this.Close();
-    }
-}
-
-        private void label1_Click(object sender, EventArgs e)
         {
+            //Stage 3: Message box for quitting
+            DialogResult response = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+            if (response == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
 
         private void txtPatientName_Enter(object sender, EventArgs e)
@@ -96,11 +88,17 @@ namespace DoctorsOffice
         private void radHMO_CheckedChanged(object sender, EventArgs e)
         {
             if (radHMO.Checked) selectedPlan = DoctorOffice.PLAN_HMO;
+            {
+                // Most likely will be adding to for later. It is good practice to leave the brackets in place for future code additions.
+            }
         }
 
         private void radPPO_CheckedChanged(object sender, EventArgs e)
         {
             if (radPPO.Checked) selectedPlan = DoctorOffice.PLAN_PPO;
+            {
+                // if
+            }
         }
         private void radNone_CheckedChanged(object sender, EventArgs e)
         {
@@ -109,6 +107,11 @@ namespace DoctorsOffice
                 selectedPlan = DoctorOffice.PLAN_NONE;
             }
             //when using if statements need brackets.
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            radNone.Checked = true;
         }
     }
 }
