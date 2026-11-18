@@ -6,7 +6,11 @@ namespace DoctorsOffice
 {
     public partial class Form1 : Form
     {
-        string selectedPlan = DoctorOffice.PLAN_HMO;
+        string selectedPlan = DoctorOffice.PLAN_NONE;
+        private string transactionFileName = "TransactionOutput.txt";
+        private const int LISTBOX = 1;
+        private const int FILE = 2;
+        private const int BOTH = 3;
         public Form1()
 
         {
@@ -27,29 +31,36 @@ namespace DoctorsOffice
             // 2. Print a fresh clipboard and write the inputs onto it
             if (isCostValid)
             {
-                // 2. Print a fresh clipboard and write the inputs onto it
-                //use parametized version
                 DoctorOffice patientClipboard = new DoctorOffice(inputName, inputCost, selectedPlan);
 
-
-                // 4. Get the receipt and put it in the ListBox
-                // lstOutput.Items.Clear();
-                string[] receiptLines = patientClipboard.ToString().Split('\n');
-
-                foreach (string line in receiptLines)
-                {
-                    lstOutput.Items.Add(line);
-                }
+                // Output
+                outputMsg("************** Transaction Output at " + DateTime.Now.ToString("G") + " ****************", FILE);
+                outputMsg(patientClipboard.ToString(), BOTH);
             }
             else
             {
-                //error message coded in the else portion and displayed in list box.
-                // lstOutput.Items.Clear();
-                lstOutput.Items.Add("Please enter a valid cost for the office visit.");
+                outputMsg("Please enter a valid cost for the office visit.", LISTBOX);
             }
 
         }
-
+        private void outputMsg(string msg, int type)
+        {
+            StreamWriter sw;
+            if (type == FILE || type == BOTH)
+            {
+                sw = File.AppendText(transactionFileName);
+                sw.WriteLine(msg);
+                sw.Close();
+            }
+            if (type == LISTBOX || type == BOTH)
+            {
+                string[] lines = msg.Split('\n');
+                for (int i = 0; i < lines.Length; i++)
+                {
+                    lstOutput.Items.Add(lines[i]);
+                }
+            }
+        }
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtPatientName.Clear();

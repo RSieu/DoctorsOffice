@@ -2,27 +2,32 @@
 using System.Collections.Generic;
 using System.Text;
 
+//Namespace: Folder for organization.
+
 namespace DoctorsOffice
 {
-    public class DoctorOffice
+    // Class: Blueprint for the Doctors Office Object. It is a template for creating objects that represent a doctor's office visit. It defines the properties and methods that an object of this class will have.
+
+    public class DoctorOffice 
     {
-        // Creating Properties for the data needed.
+        // Data that an object holds.. current state, traits. [PatientName,CostOfOfficeVisit.]
         public string PatientName { get; set; }
-        public decimal CostOfOfficeVisit { get; set; }
-        public decimal PercentInsuranceCoverage { get; set; }
-        public decimal PatientCopayAmount { get; set; }
-        public decimal InsurancePaidAmount { get; set; }
         public string InsurancePlan { get; set; }
 
-        //Named Constants (Official Unchangeable Names for the insureance plans and their copay rates).
+        // constants: are unchangeable values used through the program.
         public const string PLAN_HMO = "HMO";
         public const string PLAN_PPO = "PPO";
         public const string PLAN_NONE = "None";
 
-        //The Switch Statement method.
+        // decimals: are assigned to Propeties that will be used in calculations..decimal is a data type that can hold numbers with decimal points.
+        public decimal CostOfOfficeVisit { get; set; }
+        public decimal PercentInsuranceCoverage { get; set; }
+        public decimal InsurancePaidAmount { get; set; }
+        public decimal PatientCopayAmount { get; set; }
+        
+        // Switch Statement: is a way to check a variable (InsurancePlan) against a list of values (constants) and executes different code depending on which value it matches.
         public void SetCoverageRate()
         { 
-        // This looks at the string inside InsurancePlan and matches it to a constant
         switch (InsurancePlan)
         {
             case PLAN_HMO:
@@ -39,10 +44,7 @@ namespace DoctorsOffice
                 break;
         }
 }
-
-
-
-        // default constructor
+        // Default DoctorOffice Constructor: It is a special method that is called when an object is created (contructor). It has the same name as the class (DoctorOffice) and no return type.
         public DoctorOffice()
         {
             PatientName = "Unknown";
@@ -50,8 +52,8 @@ namespace DoctorsOffice
             PercentInsuranceCoverage = 0m;
             InsurancePlan = PLAN_HMO;
         }
-        
-        //Parameterized Constructor // nice
+
+        // Parameterized Constructor: Allows you to create a DoctorOffice object with specific values for PatientName, CostOfOfficeVisit, and InsurancePlan. It also calls the CalculateCosts() method to calculate the insurance coverage and copay amounts based on the provided values.
         public DoctorOffice(string patientName,decimal costOfVisit, string plan)
         {
             PatientName = patientName;
@@ -87,9 +89,16 @@ public override string ToString()
 }
 
 // Class: The original honda engineering schematics for a 1995 civic. The paperwork dictates that every civic will have a PaintColor and an EngineType, and a method to StartEngine(), you cannot drive a schematic.
+
 // Object: aN ACTUAL 1995 civic eg hatch sitting in the driveway. Its PaintColor is "carmine red" its EngineType is a "K24a2". You could build another object, a 1993 civic sedan from that same class with a D16z6 engine.. They share the same structure but different data.
+
 // Properties: nouns or adjectives that represent the current state, traits, or characteristics of an object. data that an object holds (PaintColor, EngineType) where you can use get; set; so your program can read or change their values. PatientName, CostOfOfficeVisit, PercentageInsuranceCoverage.  
-// holding state:(properties) it stores specific data it needs to know at that moment, like a patients name, their insurance provider, or their visit type. 
+
+// holding state:(properties) it stores specific data it needs to know at that moment, like a patients name, their insurance provider, or their visit type.
+
 // Methods: How: Verbs: Functions that live inside the object, inside the civic or doctors office. Like CalculateCopay() or StartEngine() or EngageVtec() and have acess to the current information important to them..
+
 // performing actions (methods): it knows how to use its own data do to work, like calculating the final copay or updating a balance without needing an outside script to do math for it. 
 // by using objects code becomes reusable 
+
+//Constructors: are special methods that are called when an object is created. They have the same name as the class and no return type. They can be used to set default values for properties or to initialize an object with specific values.
