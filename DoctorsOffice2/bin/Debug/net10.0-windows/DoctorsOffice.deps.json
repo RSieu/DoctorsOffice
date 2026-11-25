@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "DoctorsOffice/1.0.0": {
+        "runtime": {
+          "DoctorsOffice.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DoctorsOffice/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

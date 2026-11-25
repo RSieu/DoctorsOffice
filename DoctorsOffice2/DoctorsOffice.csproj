@@ -8,4 +8,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Include="bin\Debug\net10.0-windows\InsuranceInput.txt" />
+  </ItemGroup>
+
 </Project>

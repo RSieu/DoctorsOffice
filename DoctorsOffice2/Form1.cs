@@ -8,6 +8,7 @@ namespace DoctorsOffice
     {
         string selectedPlan = DoctorOffice.PLAN_NONE;
         private string transactionFileName = "TransactionOutput.txt";
+        private string insuranceConfigFile = "InsuranceInput.txt";
         private const int LISTBOX = 1;
         private const int FILE = 2;
         private const int BOTH = 3;
@@ -123,6 +124,53 @@ namespace DoctorsOffice
         private void Form1_Load(object sender, EventArgs e)
         {
             radNone.Checked = true;
+            StreamReader sr;
+            bool fileExists = false;
+            int numTries = 0;
+            const int MAX_TRIES = 3;
+
+            do //post-test loop:
+            {
+                try // try-catch block handles file not found exception. It will try to read the file and if it fails it will.
+                {
+                    numTries++;
+                    sr = File.OpenText(insuranceConfigFile);
+                    //if the file is found,
+                    fileExists = true;
+
+                    string temp = sr.ReadLine();
+                    DoctorOffice.HmoCoverageRate = decimal.Parse(temp);
+                    temp = sr.ReadLine();
+                    DoctorOffice.PpoCoverageRate = decimal.Parse(temp);
+                    temp = sr.ReadLine();
+                    DoctorOffice.NoneCoverageRate = decimal.Parse(temp);
+
+                    sr.Close();
+                }
+                catch (FileNotFoundException ex)
+                {
+                    if (numTries <= MAX_TRIES)
+                    {
+                        MessageBox.Show("The configuration file " + insuranceConfigFile +
+                    " was not found. Please select the file.\nThe message was " + ex.Message,
+                    "File Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        openFileDialog1.InitialDirectory = Directory.GetCurrentDirectory();
+                        openFileDialog1.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+                        openFileDialog1.ShowDialog();
+                        insuranceConfigFile = openFileDialog1.FileName;
+                    }
+                    else
+                    {
+                        DoctorOffice.HmoCoverageRate = 0.15m;
+                        DoctorOffice.PpoCoverageRate = 0.25m;
+                        DoctorOffice.NoneCoverageRate = 1.00m;
+                        fileExists = true;
+                    }
+                }
+            } while (!fileExists);
+
+
         }
 
         private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)

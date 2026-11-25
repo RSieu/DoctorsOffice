@@ -24,24 +24,33 @@ namespace DoctorsOffice
         public decimal PercentInsuranceCoverage { get; set; }
         public decimal InsurancePaidAmount { get; set; }
         public decimal PatientCopayAmount { get; set; }
-        
+
+        // static properties: these values are the same for all objects of this class. they are shared among all instances of the class. they are used to store information that is commmon to all objects of the class. they are accessed using the class name rather than an instance of the class. for example, if you have a class called "car" and a static property called "numberOfWheels", all instances of the car class will share the same value for numberOfWheels. If you change the value of numberOfWheels for one instance of the car class, it will change for all instances of the class. Static properties are often used to store configuration settings, constants, or other data that is shared across all instances of a class. In this case, the static properties are used to store the constants for the insurance plans (PLAN_HMO, PLAN_PPO, PLAN_NONE) that are shared among all instances of the DoctorOffice class.
+
+        public static decimal HmoCoverageRate { get; set; } = 0.15m;
+        public static decimal PpoCoverageRate { get; set; } = 0.25m;
+        public static decimal NoneCoverageRate { get;set; } = 1.00m;
+
         // Switch Statement: is a way to check a variable (InsurancePlan) against a list of values (constants) and executes different code depending on which value it matches.
         public void SetCoverageRate()
         { 
-        switch (InsurancePlan)
-        {
-            case PLAN_HMO:
-                PercentInsuranceCoverage = 0.15m;
-                break;
-            case PLAN_PPO:
-                PercentInsuranceCoverage = 0.25m;
-                break;
-            case PLAN_NONE:
-                PercentInsuranceCoverage = 1.00m;
-                break;
-            default:
-                PercentInsuranceCoverage = 1.00m;
-                break;
+            switch (InsurancePlan)
+            {
+                case PLAN_HMO:
+                    PercentInsuranceCoverage = HmoCoverageRate;
+                    break;
+
+                case PLAN_PPO:
+                    PercentInsuranceCoverage = PpoCoverageRate;
+                    break;
+
+                case PLAN_NONE:
+                    PercentInsuranceCoverage = NoneCoverageRate;
+                    break;
+
+                default:
+                    PercentInsuranceCoverage = NoneCoverageRate;
+                    break;
         }
 }
         // Default DoctorOffice Constructor: It is a special method that is called when an object is created (contructor). It has the same name as the class (DoctorOffice) and no return type.

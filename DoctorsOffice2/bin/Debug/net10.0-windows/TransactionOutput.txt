@@ -1,0 +1,48 @@
+************** Transaction Output at 11/18/2026 9:24:48 PM ****************
+Patient Name:		Ravindra Sieunarine
+Visit Cost:		$123.24
+Copay Rate:		100%
+Insurance Portion:	$0.00
+Patient Copay:		$123.24
+************** Transaction Output at 11/18/2026 9:24:50 PM ****************
+Patient Name:		Ravindra Sieunarine
+Visit Cost:		$123.24
+Copay Rate:		25%
+Insurance Portion:	$92.43
+Patient Copay:		$30.81
+************** Transaction Output at 11/18/2026 9:24:52 PM ****************
+Patient Name:		Ravindra Sieunarine
+Visit Cost:		$123.24
+Copay Rate:		15%
+Insurance Portion:	$104.75
+Patient Copay:		$18.49
+************** Transaction Output at 11/18/2026 9:25:37 PM ****************
+Patient Name:		Raj Sieunarine
+Visit Cost:		$30.00
+Copay Rate:		25%
+Insurance Portion:	$22.50
+Patient Copay:		$7.50
+************** Transaction Output at 11/18/2026 9:25:54 PM ****************
+Patient Name:		Mehendra Sieunarine
+Visit Cost:		$120.00
+Copay Rate:		100%
+Insurance Portion:	$0.00
+Patient Copay:		$120.00
+************** Transaction Output at 11/18/2026 9:26:09 PM ****************
+Patient Name:		Navindra Sieunarine
+Visit Cost:		$40.00
+Copay Rate:		15%
+Insurance Portion:	$34.00
+Patient Copay:		$6.00
+************** Transaction Output at 11/18/2026 10:10:44 PM ****************
+Patient Name:		raviq
+Visit Cost:		$100.00
+Copay Rate:		100%
+Insurance Portion:	$0.00
+Patient Copay:		$100.00
+************** Transaction Output at 11/18/2026 10:40:45 PM ****************
+Patient Name:		Michael Jackson
+Visit Cost:		$1,000.00
+Copay Rate:		50%
+Insurance Portion:	$500.00
+Patient Copay:		$500.00
