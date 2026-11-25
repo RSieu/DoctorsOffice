@@ -85,11 +85,12 @@ namespace DoctorsOffice
 //to string method
 public override string ToString()
         {
-            return "Patient Name:\t\t" + PatientName + "\n" +
-                   "Visit Cost:\t\t" + CostOfOfficeVisit.ToString("c") + "\n" +
-                   "Copay Rate:\t\t" + PercentInsuranceCoverage.ToString("p0") + "\n" +
-                   "Insurance Portion:\t" + InsurancePaidAmount.ToString("c") + "\n" +
-                   "Patient Copay:\t\t" + PatientCopayAmount.ToString("c");
+            return "Patient Name:      " + PatientName + "\n" +
+                   "Insurance Type:    " + InsurancePlan + "\n" +
+                   "Copay Rate:        " + PercentInsuranceCoverage.ToString("p0") + "\n" +
+                   "Visit Cost:        " + CostOfOfficeVisit.ToString("c") + "\n" +
+                   "Insurance Portion: " + InsurancePaidAmount.ToString("c") + "\n" +
+                   "Patient Copay:     " + PatientCopayAmount.ToString("c");
         }
 
 

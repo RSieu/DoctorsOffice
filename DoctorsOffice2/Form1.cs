@@ -99,9 +99,9 @@ namespace DoctorsOffice
 
         private void radHMO_CheckedChanged(object sender, EventArgs e)
         {
-            if (radHMO.Checked) selectedPlan = DoctorOffice.PLAN_HMO;
+            if (radHMO.Checked) 
             {
-                // Most likely will be adding to for later. It is good practice to leave the brackets in place for future code additions.
+                selectedPlan = DoctorOffice.PLAN_HMO; //if the radio button is checked, set the selectedPlan variable to the HMO plan constant defined in the DoctorOffice class.
             }
         }
 
@@ -109,7 +109,7 @@ namespace DoctorsOffice
         {
             if (radPPO.Checked) selectedPlan = DoctorOffice.PLAN_PPO;
             {
-                // if
+                selectedPlan = DoctorOffice.PLAN_PPO;
             }
         }
         private void radNone_CheckedChanged(object sender, EventArgs e)

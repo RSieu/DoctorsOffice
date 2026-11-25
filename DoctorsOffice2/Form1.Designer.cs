@@ -147,6 +147,7 @@
             // 
             // lstOutput
             // 
+            lstOutput.Font = new Font("Consolas", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lstOutput.FormattingEnabled = true;
             lstOutput.Location = new Point(25, 330);
             lstOutput.Margin = new Padding(2, 3, 2, 3);
