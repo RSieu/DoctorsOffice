@@ -177,6 +177,11 @@ namespace DoctorsOffice
         {
 
         }
+
+        private void lblPatientName_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 //a namespace is a container that holds classes, variables, and properties
